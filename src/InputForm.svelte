@@ -6,8 +6,8 @@
   const apiBaseUrl = "https://love-calculator.p.rapidapi.com/getPercentage?";
   // fname=&sname=
 
-  export let love;
-  let loverOne, loverTwo;
+  
+  let loveJson, loverOne, loverTwo;
 
   async function onSubmit(e) {
     e.preventDefault();
@@ -21,12 +21,10 @@
         }
       }
     );
-    love = await res.json();
-    console.dir(love);
-    dispatch('loveMeasured', love);
-  }
-
-
+    loveJson = await res.json();
+    
+    dispatch('data', loveJson);
+  };
 </script>
 
 <form
